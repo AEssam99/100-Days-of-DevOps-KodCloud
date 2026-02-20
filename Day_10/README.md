@@ -1,6 +1,6 @@
-#Day 10: Linux Bash Scripts
+# Day 10: Linux Bash Scripts
 
-##Task
+## Task
 The production support team of xFusionCorp Industries is working on developing some bash scripts to automate different day to day tasks. One is to create a bash script for taking websites backup. They have a static website running on App Server 2 in Stratos Datacenter, and they need to create a bash script named blog_backup.sh which should accomplish the following tasks. (Also remember to place the script under /scripts directory on App Server 2).
 
 
@@ -20,41 +20,41 @@ d. Please make sure script won't ask for password while copying the archive file
 e. Do not use sudo inside the script.
 
 
-##Solution
+## Solution
 
-###1) Install zip on App Server 2 (outside the script)
+### 1) Install zip on App Server 2 (outside the script)
 ```bash
 sudo yum install -y zip unzip
 ```
 
-###2) Enable passwordless copy to Nautilus Backup Server (SSH key)
+### 2) Enable passwordless copy to Nautilus Backup Server (SSH key)
 Run these as the App Server 2 user:
 
-####Generate SSH key (press Enter for all prompts):
+#### Generate SSH key (press Enter for all prompts):
 ```bash
 ssh-keygen -t rsa -b 4096
 ```
 
-####Copy the public key to Nautilus Backup Server user:
+#### Copy the public key to Nautilus Backup Server user:
 ```bash
 ssh-copy-id clint@172.16.238.16
 ```
 
-####Quick test (should NOT ask for password):
+#### Quick test (should NOT ask for password):
 ```bash
 ssh clint@172.16.238.16 "ls -ld /backup"
 ```
 
-###3) Create the script on App Server 
+### 3) Create the script on App Server 
 
 
-####Create the script on App Server 2:
+#### Create the script on App Server 2:
 ```bash
 mkdir -p /scripts
 vi /scripts/blog_backup.sh
 ```
 
-####Paste this script:
+#### Paste this script:
 ```bash
 #!/bin/bash
 set -euo pipefail
@@ -89,12 +89,12 @@ echo "Backup completed:"
 echo " - Local:  $LOCAL_ARCHIVE_PATH"
 echo " - Remote: ${REMOTE_USER}@${REMOTE_HOST}:${REMOTE_DIR}/${ARCHIVE_NAME}"2: /scripts/blog_backup.sh
 ```
-###4) Make it executable (and runnable by the server user)
+### 4) Make it executable (and runnable by the server user)
 ```bash
 chmod 755 /scripts/blog_backup.sh
 ```
 
-###5) Run + verify
+### 5) Run + verify
 ```bash
 /scripts/blog_backup.sh
 ls -l /backup/xfusioncorp_blog.zip
