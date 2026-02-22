@@ -3,6 +3,7 @@
 ## Task 
 The Nautilus application development team recently finished the beta version of one of their Java-based applications, which they are planning to deploy on one of the app servers in Stratos DC. 
 After an internal team meeting, they have decided to use the tomcat application server. 
+
 Based on the requirements mentioned below complete the task: 
 
 a. Install tomcat server on App Server 1. 
