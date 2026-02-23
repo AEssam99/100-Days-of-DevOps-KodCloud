@@ -7,7 +7,7 @@ So we have decided to add some security layer for these hosts and after discussi
 3. Make sure the rules remain, even after system reboot.
 
 ## Solution
-'Note' We will perform the below tasks on stapp01,stapp02 and stapp03
+`Note` We will perform the below tasks on stapp01,stapp02 and stapp03
 ### Install iptables-services
 ```sh
 sudo dnf install -y iptables iptables-services
@@ -49,7 +49,7 @@ You should see your ACCEPT/REJECT lines.
 ```sh
 [loki@stlb01 ~]$ curl -I http://172.16.238.10:8089
 ```
-'Output'
+`Output`
 ```sh
 HTTP/1.1 403 Forbidden 
 Date: Mon, 23 Feb 2026 22:34:04 GMT 
