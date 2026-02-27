@@ -32,7 +32,7 @@ The following load balancing mechanisms (or methods) are supported in nginx:
 - round-robin (Default): requests to the application servers are distributed in a round-robin fashion,
 - least-connected: next request is assigned to the server with the least number of active connections,
 - ip-hash: a hash-function is used to determine what server should be selected for the next request (based on the client’s IP address).
-
+## 
 ### Install Nginx on the LBR server
 On the LBR server
 ```sh 
