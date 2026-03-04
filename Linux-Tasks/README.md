@@ -133,7 +133,6 @@ Inside each directory you will find:
 
 This repository demonstrates hands-on experience rather than just theoretical knowledge.
 # 👨‍💻 Author
-
 Ahmed Essam
 
 DevOps & Sys Admin
