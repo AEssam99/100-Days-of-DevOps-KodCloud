@@ -10,7 +10,6 @@ a. Install cronie package on all Nautilus app servers and start crond service.
 b. Add a cron */5 * * * * echo hello > /tmp/cron_text for root user.
 
 ## Solution
-
 ### 1) Install the Cronie package in the app-server
 ```bash 
 sudo yum install cronie -y
