@@ -100,7 +100,7 @@ This repository reflects:
 
 - Hands-on practice
 
-R- eal-world DevOps tooling
+- Real-world DevOps tooling
 
 - Production-style configurations
 
