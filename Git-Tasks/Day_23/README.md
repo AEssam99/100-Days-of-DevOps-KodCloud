@@ -48,6 +48,7 @@ And Press Fork Repository
 ### 5️⃣ Verify the fork
 After the fork finishes, you should see:
 ```sh
+jon / story-blog
 ```
 ![Architecture](final.png)
 This means:
